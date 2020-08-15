@@ -46,7 +46,7 @@ function build_kernel_modules() {
 
 select_toolchain
 make ARCH=arm64 CROSS_COMPILE=${TOOLCHAIN_GCC} nanopi4_linux_defconfig
-make ARCH=arm64 CROSS_COMPILE=${TOOLCHAIN_GCC} nanopi4-bootimg --jobs=${JOB}
+make ARCH=arm64 CROSS_COMPILE=${TOOLCHAIN_GCC} nanopi4-images --jobs=${JOB}
 build_kernel_modules
 exit 0
 

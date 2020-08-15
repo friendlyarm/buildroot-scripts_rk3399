@@ -30,8 +30,7 @@ select_toolchain()
 }
 
 select_toolchain
-make CROSS_COMPILE=${TOOLCHAIN_GCC} rk3399_defconfig
-make CROSS_COMPILE=${TOOLCHAIN_GCC} --jobs=${JOB}
+./make.sh nanopi4
 exit 0
 
 
