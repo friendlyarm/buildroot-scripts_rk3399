@@ -12,6 +12,7 @@ ADDR2LINE_ARM64=aarch64-linux-gnu-addr2line
 OBJ_ARM64=aarch64-linux-gnu-objdump
 GCC_ARM64=aarch64-linux-gnu-
 TOOLCHAIN_ARM64=../prebuilts/gcc/linux-x86/aarch64/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin
+OUT="$(cd ../out/; pwd)/output_rk3399_kmodules"
 
 select_toolchain()
 {
@@ -31,7 +32,6 @@ select_toolchain()
 
 function build_kernel_modules() {
     KOPT="ARCH=arm64 CROSS_COMPILE=${TOOLCHAIN_GCC}"
-    OUT=/tmp/output_rk3399_kmodules
     rm -rf ${OUT}
     mkdir -p ${OUT}
     make ${KOPT} nanopi4_linux_defconfig
